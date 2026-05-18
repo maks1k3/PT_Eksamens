@@ -1,0 +1,40 @@
+@import "@{colors}";
+@radius: 20;
+@offset: 0.85;
+@circumference: (3.14 * 2 * @radius * @offset);
+
+.wrapper {
+  width: 50px;
+  height: 50px;
+  transform-origin: 50% 50% 0;
+}
+
+.circle {
+  cx: 25;
+  cy: 25;
+  r: @radius;
+  stroke: @main;
+  fill: none;
+  stroke-width: 5px;
+  stroke-dashoffset: -@circumference;
+  stroke-dasharray: @circumference;
+  animation: animation 1.8s linear infinite;
+  transform: rotate(-90deg);
+  transform-origin: 50%;
+  position: relative;
+}
+@keyframes animation {
+  0% {
+    transform: rotate(-90deg);
+    stroke-dashoffset: @circumference;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    transform: rotate(270deg);
+    stroke-dashoffset: -@circumference;
+  }
+}

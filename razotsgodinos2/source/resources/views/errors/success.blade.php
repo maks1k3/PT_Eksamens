@@ -1,0 +1,4 @@
+<div class="alert bg-success alert-styled-left">
+    <button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">Close</span></button>
+    {{ $msg or '' }}
+</div>

@@ -1,0 +1,50 @@
+.wrapper {
+  position: relative;
+  min-height: 0.01%;
+  width: 100%;
+  overflow-x: hidden;
+  //tablet and mobile
+  @media (max-width: 1023px) {
+    overflow-x: auto;
+  }
+}
+
+.wrapper_overflow-scroll {
+  overflow-x: auto;
+  //tablet and mobile
+  @media (max-width: 1023px) {
+    overflow-x: auto;
+  }
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.footer-cell {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  vertical-align: middle;
+  padding: 8px;
+  line-height: 1.5384616;
+  outline: 0;
+  position: relative;
+  font-weight: 500;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.footer-cell_invisible {
+  padding: 0 !important;
+}
+
+.invisible-footer {
+  visibility: hidden;
+}

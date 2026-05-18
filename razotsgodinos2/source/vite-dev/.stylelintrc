@@ -1,0 +1,30 @@
+{   
+    "customSyntax": "postcss-less",
+    "ignoreFiles": [ 
+        "**/modules/assets/**/*.less",
+        "**/modules/vendor/**/*.less"       
+    ],
+    "extends": "stylelint-config-recommended-less",
+    "fix":true,
+    "rules": {
+      "declaration-block-no-duplicate-properties": true,
+      "declaration-empty-line-before": "never",
+      "at-rule-no-unknown": true,
+      "no-descending-specificity": null,
+      "at-rule-no-vendor-prefix": true,
+      "at-rule-empty-line-before": "always",
+      "unit-no-unknown": true,
+      "selector-type-case": "lower",
+      "selector-type-no-unknown": true,
+      "rule-empty-line-before": "always-multi-line",
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": ["global"]
+        }
+      ],
+      "font-family-no-missing-generic-family-keyword" : [true, {"ignoreFontFamilies": ["icomoon","Material Design Icons","Font Awesome","foundation-icons","Glyphicons Halflings","Ionicons"]}],
+      "property-no-unknown": true,
+      "property-no-vendor-prefix": true
+    }
+}

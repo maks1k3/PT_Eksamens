@@ -1,0 +1,30 @@
+.wrapper {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.wrapper_responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper_clickable {
+  cursor: pointer;
+}
+
+.wrapper_center {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wrapper_lazyload {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.wrapper_lazyload_loaded {
+  opacity: 1;
+}

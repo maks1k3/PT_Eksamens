@@ -1,0 +1,116 @@
+@import "@{colors}";
+@initialHeight: 100px;
+@charsLimitHeight: 30px;
+@fontSize: 0.875rem;
+@lineHeight: 1.5384616;
+@borderWidth: 1px;
+@paddingTopBottom: 7px;
+@paddingRightLeft: 12px;
+@borderRadius: 3px;
+@color: #fffdfd;
+@placeholder: #757575;
+@charstLimitColor: #8d8989;
+@clearIcon: 1.25rem;
+
+.wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+  transition: border-color ease-in-out 0.15s;
+  border: @borderWidth solid #ddd;
+  background-color: #fff;
+  border-radius: @borderRadius;
+}
+
+.wrapper_error {
+  border-color: #F44336;
+}
+
+.wrapper_focused {
+  border-color: #5cb3fd;
+}
+
+.wrapper_disabled {
+  background-color: #fafafa;
+}
+
+.textarea {
+  //resize: vertical;
+  display: block;
+  resize: none;
+  white-space: pre-wrap;
+  outline: 0;
+  border: none;
+  font-family: inherit;
+  box-shadow: none;
+  background-color: transparent;
+  height: @initialHeight;
+  width: 100%;
+  padding: @paddingTopBottom @paddingRightLeft;
+  color: black;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.wrapper_show-chars-limit {
+
+  .textarea {
+    resize: none;
+  }
+}
+
+.wrapper_invisible {
+  border: none;
+  background-color: transparent;
+
+  .textarea {
+    resize: none;
+  }
+}
+
+.styled-placeholder-wrapper {
+  position: absolute;
+  height: @initialHeight;
+  width: 100%;
+  left: 0;
+  top: 0;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  padding: @paddingTopBottom @paddingRightLeft;
+}
+
+.styled-placeholder {
+  color: @placeholder;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.clear-icon-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.clear-icon {
+  font-size: @clearIcon;
+  color: @color;
+}
+
+.chars-limit-wrapper {
+  height: @charsLimitHeight;
+  text-align: right;
+  padding: @paddingTopBottom @paddingRightLeft;
+}
+
+.chars-limit {
+  color: @charstLimitColor;
+  font-size: @fontSize;
+}

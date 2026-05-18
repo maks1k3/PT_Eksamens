@@ -1,0 +1,38 @@
+.wrapper {
+  display: block;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wrapper_clickable {
+  cursor: pointer;
+}
+
+.wrapper_lazyload {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.wrapper_lazyload_loaded {
+  opacity: 1;
+}
+
+.play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.5) url("/img/ui/media/play.png") 19px 13px no-repeat;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 100ms linear;
+
+  &:hover {
+    background-color: rgba(0,0,0,.6);
+  }
+}

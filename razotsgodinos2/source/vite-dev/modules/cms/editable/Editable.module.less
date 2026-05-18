@@ -1,0 +1,50 @@
+@import "@{colors}";
+
+.wrapper {
+  position: relative;
+  border: 2px solid @custom;
+  min-height: 40px;
+  min-width: 40px;
+  display: block;
+  margin: 2px;
+}
+
+.wrapper_padding {
+  padding-top: 30px;
+}
+
+.icon {
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.icon-wrapper {
+  z-index: 998;
+  cursor: pointer;
+  position: absolute;
+  background: @custom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.active-icon {
+  top: 0;
+  left: 0;
+  cursor: auto;
+}
+
+.active-icon_not-active {
+  background: #d23429;
+}

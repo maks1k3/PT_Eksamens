@@ -1,0 +1,2 @@
+export const UPDATE = 'CONFIGURATION:UPDATE';
+export const SET = 'CONFIGURATION:SET';

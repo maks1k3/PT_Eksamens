@@ -1,0 +1,148 @@
+@import "@{colors}";
+@height: 21px;
+@left: 30px;
+@right: 30px;
+@fontSize: 0.875rem;
+@lineHeight: 1.5384616;
+@borderWidth: 0;
+@paddingTopBottom: 0;
+@paddingRightLeft: 5px;
+@borderRadius: 0;
+@color: #333333;
+@placeholder: #757575;
+@icon: 1rem;
+@clearIcon: 1.25rem;
+
+.wrapper {
+  display: flex;
+  transition: border-color ease-in-out 0.15s;
+  border: @borderWidth solid #ddd;
+  background-color: #fff;
+  border-radius: @borderRadius;
+  position: relative;
+  height: @height;
+}
+
+.wrapper_error {
+  border-color: #F44336;
+}
+
+.wrapper_focused {
+  border-color: #5cb3fd;
+}
+
+.wrapper_disabled {
+  background-color: #fafafa;
+}
+
+.wrapper_invisible {
+  border: none;
+  background-color: transparent;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: @left;
+  height: @height;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: @right;
+  height: @height;
+}
+
+.center {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-start;
+  height: @height;
+  position: relative;
+}
+
+.styled-placeholder-wrapper {
+  position: absolute;
+  height: @height;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  padding: @paddingTopBottom @paddingRightLeft;
+}
+
+.styled-placeholder {
+  color: @placeholder;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.input {
+  outline: 0;
+  border: none;
+  font-family: inherit;
+  box-shadow: none;
+  background-color: transparent;
+  height: @height;
+  width: 100%;
+  padding: @paddingTopBottom @paddingRightLeft;
+  color: @color;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.input_with-left {
+  padding-left: 0;
+}
+
+.input_with-right {
+  padding-right: 0;
+}
+
+.icon {
+  font-size: @icon;
+  color: @color;
+}
+
+.clear-icon {
+  font-size: @clearIcon;
+  color: @color;
+}
+
+.loading-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: @right;
+  height: @height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  animation: animation-spin 400ms infinite linear;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-right-color: #333;
+}
+@keyframes animation-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -1,0 +1,37 @@
+@import "@{colors}";
+
+.dropdown-wrapper {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  width: 100%;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  margin-top: -1px;
+  user-select: none;
+}
+
+.options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.option {
+  cursor: pointer;
+  padding: 8px 10px;
+  color: #000;
+  font-size: 0.875rem;
+
+  &:hover {
+    background-color: #ededed;
+  }
+}
+
+.option_active {
+  background-color: #ededed;
+}

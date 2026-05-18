@@ -1,0 +1,30 @@
+.wrapper {
+  display: block;
+}
+
+.image-wrapper {
+  margin-bottom: 20px;
+  display:flex;
+  justify-content: center;;
+  //desktop
+  @media (min-width: 481px) {
+    text-align: center;
+    overflow: auto;
+  }
+}
+
+.file-upload-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image {
+  max-height: 400px;
+  background: #ccc;
+  //mobile
+  @media (max-width: 480px) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

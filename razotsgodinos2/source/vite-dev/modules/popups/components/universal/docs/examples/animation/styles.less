@@ -1,0 +1,43 @@
+.open_animation {
+  animation-name: open_animation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+@keyframes open_animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+.close_animation {
+  animation-name: close_animation;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+@keyframes close_animation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

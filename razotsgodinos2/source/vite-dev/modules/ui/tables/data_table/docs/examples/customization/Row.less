@@ -1,0 +1,39 @@
+.cell {
+  vertical-align: middle;
+  padding: 10px;
+  line-height: 1.5384616;
+  border: 1px inset #ccc;
+  font-size: 0.875rem;
+}
+
+.has-collapsed td:first-child {
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+
+  &:before {
+    font-family: 'icomoon';
+    display: inline-block;
+    font-size: 1rem;
+    width: 16px;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+  }
+}
+
+.collapsed td:first-child {
+  &:before {
+    content: '\E9E4';
+  }
+}
+
+.opened td:first-child {
+  &:before {
+    content: '\E9E7';
+  }
+}

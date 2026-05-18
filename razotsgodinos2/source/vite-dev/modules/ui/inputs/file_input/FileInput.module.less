@@ -1,0 +1,41 @@
+@import "@{colors}";
+@fontSize: 0.875rem;
+@color: #000;
+
+.file-upload-button-wrapper {
+  margin-bottom: 10px;
+}
+
+.file {
+  font-size: @fontSize;
+  display: flex;
+  align-items: center;
+}
+
+.file + .file {
+  margin-top: 10px;
+}
+
+.delete-icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.file-icon {
+  color: @color;
+  margin-right: 5px;
+}
+
+.file-name {
+  color: @color;
+  margin-right: 5px;
+}
+
+.file-size {
+  color: @color;
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  margin-right: 5px;
+}

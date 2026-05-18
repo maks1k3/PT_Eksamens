@@ -1,0 +1,285 @@
+:global {
+
+/* ========================================================================*
+ *
+ *                     Utils
+ *
+ * ========================================================================*/
+
+.clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.no-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-bare {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.highlight {
+  background: yellow;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+/* ========================================================================*
+*
+*                     Visibility
+*
+* ========================================================================*/
+
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+/* ========================================================================*
+ *
+ *                     Table
+ *
+ * ========================================================================*/
+
+.div-table {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  position: relative;
+}
+
+.div-table-row {
+  display: table-row;
+}
+
+.div-table-col {
+  display: table-column;
+}
+
+.div-table-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* ========================================================================*
+ *
+ *                     Text
+ *
+ * ========================================================================*/
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+/* ========================================================================*
+ *
+ *                     Display
+ *
+ * ========================================================================*/
+
+.display-block {
+  display: block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-table {
+  display: table;
+}
+
+.display-table-row {
+  display: table-row;
+}
+
+.display-table-column {
+  display: table-column;
+}
+
+.display-table-cell {
+  display: table-cell;
+}
+
+.display-none {
+  display: none;
+}
+
+/* ========================================================================*
+ *
+ *                     Layout
+ *
+ * ========================================================================*/
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================================================*
+ *
+ *                     Float
+ *
+ * ========================================================================*/
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+/* ========================================================================*
+*
+*                     Position
+*
+* ========================================================================*/
+
+.position-fixed, .fixed {
+  position: fixed;
+}
+
+.position-relative, .relative {
+  position: relative;
+}
+
+.position-absolute, .absolute {
+  position: absolute;
+}
+
+/* ========================================================================*
+*
+*                     Text direction
+*
+* ========================================================================*/
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+/* ========================================================================*
+*
+*                     Align
+*
+* ========================================================================*/
+
+.vertical-top {
+  vertical-align: top;
+}
+
+.vertical-bottom {
+  vertical-align: bottom;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.vertical-baseline {
+  vertical-align: baseline;
+}
+
+/* ========================================================================*
+ *
+ *                     Width
+ *
+ * ========================================================================*/
+
+.fit {
+  max-width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+
+}

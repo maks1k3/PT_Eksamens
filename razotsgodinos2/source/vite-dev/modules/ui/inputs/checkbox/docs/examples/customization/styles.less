@@ -1,0 +1,103 @@
+@import "@{colors}";
+@height: 20px;
+@width: 20px;
+@borderRadius: 10px;
+@borderWidth: 2px;
+@labelFontSize: 1rem;
+@labelColor: #8a015f;
+
+.outer {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  outline: 0;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: @width;
+  height: @height;
+  user-select: none;
+  transition: border 0.15s ease-in-out,background 0.15s ease-in-out;
+  border-radius: @borderRadius;
+  border: @borderWidth dashed #ddd;
+  background-color: #fff;
+}
+
+.wrapper_error {
+  border-color: #F44336;
+}
+
+.wrapper_focused {
+  border-color: #5cb3fd;
+}
+
+.wrapper_disabled {
+  cursor: not-allowed;
+  border-color: #d9d9d9!important;
+  background-color: #f5f5f5!important;
+}
+
+.tick {
+  font-size: 0.625rem;
+  color: #fff;
+}
+
+.tick_disabled {
+  border-color: rgba(0,0,0,.25);
+}
+
+.label {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: @labelFontSize;
+  color: @labelColor;
+  margin-left: 10px;
+}
+
+.label_disabled {
+  cursor: not-allowed;
+  color: rgba(0,0,0,.25);
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+.wrapper_main_active {
+  background-color: @main;
+  border-color: @main;
+}
+
+.wrapper_primary_active {
+  background-color: @primary;
+  border-color: @primary;
+}
+
+.wrapper_success_active {
+  background-color: @success;
+  border-color: @success;
+}
+
+.wrapper_info_active {
+  background-color: @info;
+  border-color: @info;
+}
+
+.wrapper_warning_active {
+  background-color: @warning;
+  border-color: @warning;
+}
+
+.wrapper_danger_active {
+  background-color: @danger;
+  border-color: @danger;
+}
+
+.wrapper_custom_active {
+  background-color: @custom;
+  border-color: @custom;
+}

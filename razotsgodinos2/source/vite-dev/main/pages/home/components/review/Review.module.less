@@ -1,0 +1,303 @@
+.container{
+    display: flex;
+padding: 120px;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+align-self: stretch;
+}
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+align-items: flex-end;
+gap: -80px;
+align-self: stretch;
+position: relative;
+}
+.heading {
+  position: absolute;
+  right: 217px;
+  top: 0;
+  width: 243px;
+
+  color: #3e3636;
+  font-family: "Space Grotesk";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+  z-index: 2;
+}
+
+.left {
+  width: 680px;
+  height: 453px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+  }
+}
+
+
+.date {
+  position: absolute;
+  left: 32px;
+  bottom: 16px;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 135%;
+  z-index: 4;
+}
+
+.right {
+  width: 600px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background: #252521;
+  margin-left: -80px;
+  position: relative;
+  z-index: 3; 
+}
+
+.head_text {
+  width: 100%;
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 135%;
+}
+
+.text {
+  width: 100%;
+  color: #fff;
+  font-family: Lexend;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.info_btn2 {
+  position: absolute;
+  left: -141px;
+  bottom: 0;
+  display: inline-flex !important;
+  padding: 12px 24px !important;
+  justify-content: center;
+  align-items: center;
+  background: #FC9732 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  z-index: 5;
+
+}
+.next_inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+btnTitle{
+  display: flex;
+padding: 12px 24px;
+justify-content: flex-end;
+align-items: center;
+gap: 12px;
+}
+
+.next_text {
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 135%;
+}
+
+@media (max-width:1370px){
+  .container {
+    padding: 80px 48px;
+  }
+
+  .wrapper {
+    max-width: 1000px;
+    gap: 0; 
+  }
+
+  .left {
+    width: 58%;
+    height: auto;
+  }
+
+  .image {
+    height: auto;
+    min-height: 360px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .right {
+    width: 52%;
+    margin-left: -60px;
+  }
+
+  .heading {
+    right: 120px;
+    width: 260px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .container {
+    padding: 64px 32px 96px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  
+  }
+
+ .heading {
+    position: static; 
+    order: -1;           
+    width: 100%;
+    margin-bottom: 32px;
+    color: #3E3636;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%; 
+    align-self: stretch;
+  }
+
+  .left {
+    width: 100%;
+    height: auto;
+  }
+
+  .image {
+    height: auto;
+    min-height: 320px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .date {
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .info_btn2 {
+    bottom: -48px;
+        left: 0px;
+  }
+  .left {
+    width: 100%;
+    height: auto;
+    padding-right: 40px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .date {
+    right: -50px;
+    bottom: 13px;
+    color: var(--Grey-Green-grey-900, #252521);
+    font-family: "Space Grotesk";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 48px 24px 88px;
+  }
+  
+ .info_btn2{
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  bottom: -42px;
+ }
+  .image {
+    min-height: 280px;
+  }
+
+  .right {
+    padding: 24px;
+  }
+
+  .head_text {
+    font-size: 15px;
+  }
+
+  .text {
+    font-size: 13.5px;
+  }
+
+  .next {
+    padding: 12px 18px;
+  }
+ 
+}
+
+@media (max-width: 500px) {
+  .image {
+    width: 100%;
+    height: auto;
+    min-height: 223px;
+    aspect-ratio: 295 / 223.33;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .right {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .head_text {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+
+

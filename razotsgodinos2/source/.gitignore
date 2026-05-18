@@ -1,0 +1,14 @@
+/node_modules
+/public_html/uploads
+/public_html/dist/*
+/webpack-dev/node_modules
+/webpack-dev/modules
+/webpack-dev/.idea
+/public/hot
+/storage/*.key
+/vendor
+/.idea
+/public_html/assets/js
+Homestead.json
+Homestead.yaml
+yarn-error.log

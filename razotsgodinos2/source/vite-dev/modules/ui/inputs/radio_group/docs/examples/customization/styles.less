@@ -1,0 +1,95 @@
+@import "@{colors}";
+@optionHeight: 20px;
+@optionWidth: 20px;
+@circleHeight: 10px;
+@circleWidth: 10px;
+@borderWidth: 2px;
+@labelFontSize: 1rem;
+@labelColor: #412865;
+
+.wrapper {
+  outline: 0;
+  user-select: none;
+}
+
+.option-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.option-wrapper_disabled {
+  cursor: not-allowed;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: @borderWidth solid #ddd;
+  width: @optionWidth;
+  height: @optionHeight;
+  background-color: #fff;
+}
+
+.option_disabled {
+  border-color: #d9d9d9;
+  background-color: #f5f5f5;
+}
+
+.circle {
+  width: @circleWidth;
+  height: @circleHeight;
+  border-radius: 50%;
+}
+
+.circle_disabled {
+  background-color: #ccc!important;
+}
+
+.label {
+  display: inline-block;
+  user-select: none;
+  font-size: @labelFontSize;
+  color: @labelColor;
+  margin-left: 20px;
+}
+
+.label_disabled {
+  color: rgba(0,0,0,.25);
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+
+.circle_main {
+  background-color: @main;
+}
+
+.circle_primary {
+  background-color: @primary;
+}
+
+.circle_success {
+  background-color: @success;
+}
+
+.circle_info {
+  background-color: @info;
+}
+
+.circle_warning {
+  background-color: @warning;
+}
+
+.circle_danger {
+  background-color: @danger;
+}
+
+.circle_custom {
+  background-color: @custom;
+}

@@ -1,0 +1,31 @@
+@import "@{colors}";
+@fontSize: 0.875rem;
+@color: #337ab7;
+
+.wrapper {
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+  color: @color;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    text-decoration: underline;
+    background-color: transparent;
+    outline: none;
+    color: @color;
+  }
+}
+
+.icon {
+  color: @color;
+  font-size: @fontSize;
+  margin-right: 5px;
+}
+
+.title {
+  color: @color;
+  font-size: @fontSize;
+}

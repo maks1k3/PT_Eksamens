@@ -1,0 +1,54 @@
+@import "@{colors}";
+@fontSize: 1rem;
+@color: #000;
+
+.wrapper {
+  background-color: #f3f3f3;
+  border: 2px solid #efefef;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  min-height: 30px;
+  background-color: #fff;
+}
+
+.item + .item {
+  border-top: 2px solid #000;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left-empty {
+  width: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 0;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.sorting-control {
+  padding: 10px;
+  font-size: @fontSize;
+  color: @color;
+  cursor: row-resize;
+}
+
+.icon {
+  padding: 10px;
+  font-size: @fontSize;
+  color: @color;
+}

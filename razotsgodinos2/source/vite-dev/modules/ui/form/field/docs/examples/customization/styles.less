@@ -1,0 +1,53 @@
+@import "@{colors}";
+@color: #479826;
+@fontSize: 1.25rem;
+
+.wrapper {
+  margin-bottom: 30px;
+}
+
+.wrapper_row {
+  display: flex;
+  min-height: 50px;
+}
+
+.wrapper_column {
+  display: block;
+}
+
+.label-wrapper_column {
+  margin-bottom: 20px;
+}
+
+.label-wrapper_row {
+  padding-right: 20px;
+  padding-top: 20px;
+  width: 30%;
+}
+
+.label {
+  font-weight: bold;
+  font-size: @fontSize;
+  color: #0b2636;
+}
+
+.is-required-mark {
+  font-size: @fontSize;
+  color: @color;
+}
+
+.input-wrapper_row {
+  padding-left: 20px;
+  width: 70%;
+}
+
+.error-wrapper {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: @color;
+  font-size: 1.25rem;
+}

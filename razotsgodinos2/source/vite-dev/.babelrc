@@ -1,0 +1,24 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"modules": false
+			}
+		],
+		"@babel/preset-react"
+	],
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./app", "./modules"],
+				"extensions": [".js", ".jsx", ".less"]
+			}
+		],
+		"@babel/plugin-transform-destructuring",
+		"@babel/plugin-transform-parameters",
+		"@babel/plugin-transform-flow-strip-types",
+		"@babel/plugin-transform-react-display-name"
+	]
+}

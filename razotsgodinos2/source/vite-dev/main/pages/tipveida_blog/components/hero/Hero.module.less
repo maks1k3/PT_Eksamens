@@ -1,0 +1,146 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--Grey-Green-grey-50, #EEEEED);
+  position: relative;
+
+  /* как в Categories */
+  padding: 120px 20px 48px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+
+  /* важно: убрать внутренние паддинги, чтобы было как в обычных проектах */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1350px) {
+  .container {
+    padding: 120px 20px 48px;
+  }
+}
+.head{
+    display: flex;
+align-items: flex-start;
+gap: 32px;
+align-self: stretch;
+z-index: 2;
+}
+.head_text{
+    flex: 1 0 0;
+    color: var(--Grey-Green-grey-900, #252521);
+
+/* H2 */
+font-family: "Space Grotesk";
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 52.8px */
+}
+.items{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+align-items: center;
+gap: 24px;
+align-self: stretch;
+}
+
+.tip_projects_Btn {
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 12px 24px !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid var(--Orange-orange-500, #FC9732) !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+.tip_projects_Title {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.tip_projects_Text {
+  color: var(--Orange-orange-500, #FC9732) !important;
+  font-family: "Space Grotesk" !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 135% !important;
+}
+.tip_projects_Btn:hover,
+.tip_projects_Btn:focus,
+.tip_projects_Btn:active {
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-bottom: 2px solid var(--Orange-orange-500, #FC9732) !important;
+}
+
+.navigation{
+    display: flex;
+width: 100%;
+padding: 0 32px;
+align-items: center;
+gap: 8px;
+position: absolute;
+top: 24px;
+}
+.name{
+    color: var(--Grey-Green-grey-900, #252521);
+font-family: Lexend;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 150%; 
+}
+@media(max-width:1350px){
+    .container{
+        padding: 120px 20px 48px;
+    }
+}
+@media(max-width:670px){
+  .head{
+    flex-direction: column;
+  }
+  .head_text{
+    font-size: 32px;
+    align-self: stretch;
+    gap: 24px;
+  }
+  .tip_projects_Btn {
+  gap: 10px !important;
+  padding: 10px 20px !important;
+}
+.tip_projects_Text {
+  font-size: 14px !important;
+  line-height: 135% !important;
+}
+.svg6{
+  width: 20px;
+height: 20px;
+aspect-ratio: 1/1;
+}
+.container{
+  padding-top: 80px;
+}
+}

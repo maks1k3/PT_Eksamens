@@ -1,0 +1,449 @@
+@import "@{colors}";
+@disabledColor: #bdbdbd;
+@size: 2px;
+@padding: 13px;
+
+
+.wrapper {
+  position: relative;
+  touch-action: none;
+  cursor: pointer;
+}
+
+.wrapper_horizontal {
+  width: 100%;
+  padding: @padding 0;
+}
+
+.wrapper_vertical {
+  height: 100%;
+  width: @size;
+  padding: 0 @padding;
+  display: inline-block;
+}
+
+.wrapper_disabled {
+  cursor: not-allowed;
+}
+
+.rail {
+  width: 100%;
+  height: @size;
+  display: block;
+  opacity: 0.38;
+  position: absolute;
+  border-radius: 1px;
+}
+
+.rail_vertical {
+  width: @size;
+  height: 100%;
+}
+
+.rail_disabled {
+  background-color: @disabledColor !important;
+}
+
+.track {
+  cursor: pointer;
+  height: @size;
+  display: block;
+  position: absolute;
+  border-radius: 1px;
+}
+
+.track_vertical {
+  width: @size;
+}
+
+.track_disabled {
+  background-color: @disabledColor !important;
+}
+
+.mark {
+  width: @size;
+  height: @size;
+  position: absolute;
+  border-radius: 1px;
+}
+
+.mark_active {
+  opacity: 0.8;
+  background-color: #fff;
+}
+
+.markLabel {
+  color: #0000008a;
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+  white-space: nowrap;
+}
+
+.markLabel_horizontal {
+  top: 26px;
+  transform: translateX(-50%);
+}
+
+.markLabel_vertical {
+  top: auto;
+  left: 26px;
+  transform: translateY(50%);
+}
+
+.markLabel_active {
+  color: #000000de;
+}
+
+.thumb {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  outline: 0;
+  position: absolute;
+  margin-top: -5px;
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0.1ms;
+  align-items: center;
+  margin-left: -6px;
+  border-radius: 50%;
+  justify-content: center;
+
+  &::after {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+@media (hover: none) {
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.thumb_disabled {
+  box-shadow: none;
+  width: 8px;
+  height: 8px;
+  margin-top: -3px;
+  margin-left: -4px;
+  background-color: @disabledColor !important;
+}
+
+.valueLabel {
+  top: -34px;
+  z-index: 1;
+  position: absolute;
+  font-size: 0.875rem;
+  transform: scale(0);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0.1ms;
+  font-weight: 400;
+  line-height: 1.2;
+  transform-origin: bottom center;
+}
+
+.valueLabel_open {
+  transform: scale(1) translateY(-10px);
+  left: calc(-50% - 4px);
+}
+
+.valueLabel_circle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  transform: rotate(-45deg);
+  align-items: center;
+  border-radius: 50% 50% 50% 0;
+  justify-content: center;
+}
+
+.valueLabel_label {
+  color: #fff;
+  transform: rotate(45deg);
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+
+
+.wrapper_primary {
+
+  .rail {
+    background-color: @primary;
+  }
+
+  .track {
+    background-color: @primary;
+  }
+
+  .mark {
+    background-color: @primary;
+  }
+
+  .thumb {
+    background-color: @primary;
+  }
+
+  .valueLabel_circle {
+    background-color: @primary;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@primary, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@primary, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@primary, 16%);
+  }
+}
+
+.wrapper_main {
+  /* stylelint-disable .. */
+
+  
+  .rail {
+    background-color: @main;
+  }
+
+  .track {
+    background-color: @main;
+  }
+
+  .mark {
+    background-color: @main;
+  }
+
+  .thumb {
+    background-color: @main;
+  }
+
+  .valueLabel_circle {
+    background-color: @main;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@main, 16%);
+  } 
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@main, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@main, 16%);
+  }
+}
+
+
+.wrapper_success {
+
+  .rail {
+    background-color: @success;
+  }
+
+  .track {
+    background-color: @success;
+  }
+
+  .mark {
+    background-color: @success;
+  }
+
+  .thumb {
+    background-color: @success;
+  }
+
+  .valueLabel_circle {
+    background-color: @success;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@success, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@success, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@success, 16%);
+  }
+  /* stylelint-enable */
+}
+
+.wrapper_info {
+
+  .rail {
+    background-color: @info;
+  }
+
+  .track {
+    background-color: @info;
+  }
+
+  .mark {
+    background-color: @info;
+  }
+
+  .thumb {
+    background-color: @info;
+  }
+
+  .valueLabel_circle {
+    background-color: @info;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@info, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@info, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@info, 16%);
+  }
+}
+
+.wrapper_warning {
+
+  .rail {
+    background-color: @warning;
+  }
+
+  .track {
+    background-color: @warning;
+  }
+
+  .mark {
+    background-color: @warning;
+  }
+
+  .thumb {
+    background-color: @warning;
+  }
+
+  .valueLabel_circle {
+    background-color: @warning;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@warning, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@warning, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@warning, 16%);
+  }
+}
+
+.wrapper_danger {
+
+  .rail {
+    background-color: @danger;
+  }
+
+  .track {
+    background-color: @danger;
+  }
+
+  .mark {
+    background-color: @danger;
+  }
+
+  .thumb {
+    background-color: @danger;
+  }
+
+  .valueLabel_circle {
+    background-color: @danger;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@danger, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@danger, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@danger, 16%);
+  }
+}
+
+.wrapper_custom {
+
+  .rail {
+    background-color: @custom;
+  }
+
+  .track {
+    background-color: @custom;
+  }
+
+  .mark {
+    background-color: @custom;
+  }
+
+  .thumb {
+    background-color: @custom;
+  }
+
+  .valueLabel_circle {
+    background-color: @custom;
+  }
+
+  .thumb_active {
+    box-shadow: 0 0 0 14px fade(@custom, 16%);
+  }
+
+  .thumb_hover {
+
+    &:hover {
+      box-shadow: 0 0 0 8px fade(@custom, 16%);
+    }
+  }
+
+  .thumb_focus {
+    box-shadow: 0 0 0 8px fade(@custom, 16%);
+  }
+}

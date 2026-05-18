@@ -1,0 +1,35 @@
+.wrapper {
+  cursor: pointer;
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+
+.wrapper_main {
+  text-decoration: line-through;
+  background-color: #44aac3;
+  outline: 2;
+  color: inherit;
+  font-size: 1.25rem;
+}
+
+.wrapper_content {
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+  color: #337ab7;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: #23527c;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+}

@@ -1,0 +1,59 @@
+@import "@{colors}";
+@color: #D84315;
+@fontSize: 0.875rem;
+
+.wrapper {
+  margin-bottom: 20px;
+}
+
+.wrapper_row {
+  display: flex;
+  min-height: 36px;
+}
+
+.wrapper_column {
+  display: block;
+}
+
+.label-wrapper_column {
+  margin-bottom: 10px;
+}
+
+.label-wrapper_row {
+  padding-right: 10px;
+  // padding-top: 8px;
+  width: 16.66666667%;
+}
+
+.label-wrapper_center {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  font-weight: bold;
+  font-size: @fontSize;
+  color: #000;
+}
+
+.is-required-mark {
+  font-size: @fontSize;
+  color: @color;
+}
+
+
+.input-wrapper_row {
+  padding-left: 10px;
+  width: 83.33333333%;
+}
+
+.error-wrapper {
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.error-msg {
+  color: @color;
+  font-size: 0.75rem;
+}

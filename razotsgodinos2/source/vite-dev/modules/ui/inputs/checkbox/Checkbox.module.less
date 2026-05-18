@@ -1,0 +1,113 @@
+@import "@{colors}";
+@height: 17px;
+@width: 17px;
+@borderRadius: 3px;
+@borderWidth: 1px;
+@labelFontSize: 0.875rem;
+@labelColor: #000;
+
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wrapper {
+  flex-shrink: 0;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: @width;
+  height: @height;
+  user-select: none;
+  transition: border 0.15s ease-in-out,background 0.15s ease-in-out;
+  border-radius: @borderRadius;
+  border: @borderWidth solid #ddd;
+  background-color: #fff;
+}
+
+.wrapper_error {
+  border-color: #F44336;
+}
+
+.wrapper_focused {
+  border-color: #5cb3fd;
+}
+
+.wrapper_disabled {
+  cursor: not-allowed;
+  border-color: #d9d9d9!important;
+  background-color: #f5f5f5!important;
+}
+
+.tick {
+  width: 9px;
+  height: 6px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 2px solid #fcfff4;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  transform: translateZ(1px) rotate(-45deg);
+}
+
+.tick_disabled {
+  border-color: rgba(0,0,0,.25);
+}
+
+.label {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: @labelFontSize;
+  color: @labelColor;
+  margin-left: 10px;
+}
+
+.label_disabled {
+  cursor: not-allowed;
+  color: rgba(0,0,0,.25);
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+
+.wrapper_main_active {
+  background-color: @main;
+  border-color: @main;
+}
+
+.wrapper_primary_active {
+  background-color: @primary;
+  border-color: @primary;
+}
+
+.wrapper_success_active {
+  background-color: @success;
+  border-color: @success;
+}
+
+.wrapper_info_active {
+  background-color: @info;
+  border-color: @info;
+}
+
+.wrapper_warning_active {
+  background-color: @warning;
+  border-color: @warning;
+}
+
+.wrapper_danger_active {
+  background-color: @danger;
+  border-color: @danger;
+}
+
+.wrapper_custom_active {
+  background-color: @custom;
+  border-color: @custom;
+}

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  html {
+    font-size: 16px; 
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+  }
+
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+
+    /* padding: 0 5px; */
+  }
+  
+  body { 
+    min-height: 100%;  
+    position: relative;
+    background-color: white; 
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.875rem;
+    color: #000;    
+    overflow-y: scroll;
+  } 
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  #app {
+    height: 100%;
+  }
+
+  html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  position: fixed;
+  width: 100%;
+}
+  

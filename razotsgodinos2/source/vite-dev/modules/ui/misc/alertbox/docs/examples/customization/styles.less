@@ -1,0 +1,81 @@
+@import "@{colors}";
+
+.wrapper {
+  display: flex;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f9bd7;
+  width: 60px;
+}
+
+.icon {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.close-wrapper {
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  font-size: 1.875rem;
+  font-weight: 400;
+  color: #fff;
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+.wrapper_main {
+  background-color: @main;
+}
+
+.wrapper_primary {
+  background-color: @primary;
+}
+
+.wrapper_success {
+  background-color: @success;
+}
+
+.wrapper_info {
+  background-color: @info;
+}
+
+.wrapper_warning {
+  background-color: @warning;
+}
+
+.wrapper_danger {
+  background-color: @danger;
+}
+
+.wrapper_custom {
+  background-color: @custom;
+}

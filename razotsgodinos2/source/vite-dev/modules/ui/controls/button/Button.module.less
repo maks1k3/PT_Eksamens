@@ -1,0 +1,174 @@
+@import "@{colors}";
+@fontSize: 0.875rem;
+@lineHeight: 1.5;
+@borderWidth: 1px;
+@paddingTopBottom: 7px;
+@paddingRightLeft: 12px;
+@borderRadius: 3px;
+
+.button() {
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.wrapper {
+  .button;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: @borderWidth solid transparent;
+  padding: @paddingTopBottom @paddingRightLeft;
+  border-radius: @borderRadius;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+  }
+
+  &:active {
+    outline: 0;
+    box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+  }
+}
+
+
+.loader-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper_full-width {
+  width: 100%;
+}
+
+.wrapper_disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}
+  
+.icon { 
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  margin-right: 5px;
+}
+
+.title {
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  white-space: nowrap;
+}
+
+
+.wrapper_loading {
+  position: relative;
+
+  .icon,
+  .title {
+    visibility: hidden;
+  }
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+.wrapper_main {
+  color: #fff;
+  background-color: @main !important;
+  border-color: @main !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@main, 5%) !important;
+    border-color: lighten(@main, 5%) !important;
+  }
+}
+
+.wrapper_primary {
+  color: #fff;
+  background-color: @primary !important;
+  border-color: @primary !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@primary, 5%) !important;
+    border-color: lighten(@primary, 5%) !important;
+  }
+}
+
+.wrapper_success {
+  color: #fff;
+  background-color: @success !important;
+  border-color: @success !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@success, 5%) !important;
+    border-color: lighten(@success, 5%) !important; 
+  }
+}
+
+.wrapper_info {
+  color: #fff;
+  background-color: @info !important;
+  border-color: @info !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@info, 5%) !important;
+    border-color: lighten(@info, 5%) !important;
+  }
+}
+
+.wrapper_warning {
+  color: #fff;
+  background-color: @warning !important;
+  border-color: @warning !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@warning, 5%) !important;
+    border-color: lighten(@warning, 5%) !important;
+  }
+}
+
+.wrapper_danger {
+  color: #fff;
+  background-color: @danger !important;
+  border-color: @danger !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@danger, 5%) !important;
+    border-color: lighten(@danger, 5%) !important;
+  }
+}
+
+.wrapper_custom {
+  color: #fff;
+  background-color: @custom !important;
+  border-color: @custom !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten(@custom, 5%) !important;
+    border-color: lighten(@custom, 5%) !important;
+  }
+} 

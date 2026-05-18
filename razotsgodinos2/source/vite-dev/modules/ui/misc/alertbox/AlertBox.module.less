@@ -1,0 +1,85 @@
+@import "@{colors}";
+
+.wrapper {
+  display: flex;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.15);
+  width: 44px;
+  user-select: none;
+}
+
+.icon {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 15px 20px;
+}
+
+.close-wrapper {
+  cursor: pointer;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  user-select: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  font-size: 1.21875rem;
+  font-weight: 300;
+  color: #fff;
+}
+/* ========================================================================*
+*
+*                       Themes
+*
+* ========================================================================*/
+.wrapper_main {
+  background-color: @main;
+}
+
+.wrapper_primary {
+  background-color: @primary;
+}
+
+.wrapper_success {
+  background-color: @success;
+}
+
+.wrapper_info {
+  background-color: @info;
+}
+
+.wrapper_warning {
+  background-color: @warning;
+}
+
+.wrapper_danger {
+  background-color: @danger;
+}
+
+.wrapper_custom {
+  background-color: @custom;
+}

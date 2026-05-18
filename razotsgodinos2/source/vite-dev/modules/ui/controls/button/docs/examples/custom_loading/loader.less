@@ -1,0 +1,41 @@
+@import "@{colors}";
+
+.wrapper {
+  display: flex;
+  height: 6px;
+}
+
+.ball() {
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  margin: 0 3px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ball1 {
+  .ball();
+  animation: animation 0.7s linear 0s infinite both;
+}
+
+.ball2 {
+  .ball();
+  animation: animation 0.7s linear 0.35s infinite both;
+}
+
+.ball3 {
+  .ball();
+  animation: animation 0.7s linear 0s infinite both;
+}
+@keyframes animation {
+  50% {
+    transform: scale(0.75);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
