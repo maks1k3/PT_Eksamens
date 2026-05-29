@@ -28,7 +28,7 @@ class BlogEntriesController extends Controller
             ->where('container_name', 'blog_entry')
             ->orderBy('position');
     }
-
+// sagatavo vaicājumus, atgriež rezultatus
     public function search(Request $request)
     {
         $query = DB::connection('main')->table('blog_entries as b');
@@ -60,7 +60,7 @@ class BlogEntriesController extends Controller
         };
 
         $filters = [];
-
+// filtrē ierakstus pēc ID
         $filters['id'] = function ($query, $value) {
             $query->where('b.id', '=', $value);
         };
@@ -77,10 +77,11 @@ class BlogEntriesController extends Controller
 
         return Response::success($response);
     }
-
+//apstrādā darbības
     public function actions(Request $request)
     {
         $actions = [
+            //saņem ierakstu
             'get' => [
                 'rules' => [
                     'id' => 'required|integer',
@@ -113,7 +114,7 @@ class BlogEntriesController extends Controller
                     ]);
                 },
             ],
-
+// izveido ierakstu
             'create' => [
                 'rules' => [],
                 'action' => function ($request) {
@@ -189,7 +190,7 @@ class BlogEntriesController extends Controller
                     ]);
                 },
             ],
-
+//rediģē ierakstu
             'update' => [
                 'rules' => [
                     'id' => 'required|integer',
@@ -254,7 +255,7 @@ class BlogEntriesController extends Controller
                     ]);
                 },
             ],
-
+//dzēš ierakstu
             'delete' => [
                 'rules' => [
                     'id' => 'required|integer',
@@ -274,21 +275,6 @@ class BlogEntriesController extends Controller
                     if (!empty($item->image_id)) {
                         Images::deleteImageById($item->image_id);
                     }
-
-                    /*
-                     * В твоём Images enum нет ImagesTypes::blog_entry_gallery_.
-                     * Поэтому эта строка была причиной 500 ошибки:
-                     *
-                     * Images::deleteImages(ImagesTypes::blog_entry_gallery_, $item->id);
-                     *
-                     * Если в App\Types\Main\Images есть правильный case для галереи блога,
-                     * например blog_entry_gallery или blog_gallery, можешь включить одну
-                     * из строк ниже.
-                     */
-
-                    // Images::deleteImages(ImagesTypes::blog_entry_gallery->value, $item->id);
-                    // Images::deleteImages(ImagesTypes::blog_gallery->value, $item->id);
-                    // Images::deleteImages('blog_gallery', $item->id);
 
                     BlogEntry::where('position', '>', $item->position)->decrement('position');
 
