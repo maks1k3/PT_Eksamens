@@ -3,9 +3,16 @@ const menu = [];
 const baseName = '/administration';
 
 menu.push({
-	name: 'blog',
+	name: 'blog_entries',
 	title: 'Projektu ieraksti',
 	url: baseName + '/blog/blog_entries',
+	icon: _g.getMainUrl() + 'assets/icons/users.svg',
+});
+
+menu.push({
+	name: 'blog_categories',
+	title: 'Projektu kategorijas',
+	url: baseName + '/blog/blog_categories',
 	icon: _g.getMainUrl() + 'assets/icons/users.svg',
 });
 

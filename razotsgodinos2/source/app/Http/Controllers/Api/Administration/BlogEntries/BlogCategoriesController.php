@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api\Administration\BlogEntries;
-//ss
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ use App\Logic\Core\ContentTranslations;
 use App\Logic\Core\Langs;
 use App\Logic\Core\Response;
 use App\Logic\Core\DataSource;
-use App\Logic\Main\Blog\BlogCategories; //
+use App\Logic\Main\Blog\BlogCategories;
 
 use App\Types\Main\ContentTranslations as ContentTranslationsTypes;
 
@@ -20,28 +20,14 @@ use DB;
 
 class BlogCategoriesController extends Controller
 {
-    /**
-    * Constructor
-    *
-    * @return void
-    */
     public function __construct()
     {
-
-
     }
 
-    /**
-    * Search
-    *
-    * @access public
-    * @return json
-    */
-    public function search(Request $request) {
-    //<editor-fold defaultstate="collapsed" desc="search">
+    public function search(Request $request)
+    {
         $query = DB::connection('main')->table('blog_categories as b');
 
-        //columns
         $columns = [
             'b.id' => 'id',
             'b.created_at' => 'created_at',
@@ -51,59 +37,46 @@ class BlogCategoriesController extends Controller
 
         $langs = Langs::getAll();
 
-        foreach($langs as $lang) {
-            $columns[$lang.'.title'] = $lang.'_title';
+        foreach ($langs as $lang) {
+            $columns[$lang . '.title'] = $lang . '_title';
         }
 
-        ContentTranslations::leftJoin($query, $langs, 'b.id', ContentTranslationsTypes::blog_category->value);
-
-        # ========================================================================#
-        #
-        #                           Formatters
-        #
-        # ========================================================================#
+        ContentTranslations::leftJoin(
+            $query,
+            $langs,
+            'b.id',
+            ContentTranslationsTypes::blog_category->value
+        );
 
         $formatters = [];
 
-        # ========================================================================#
-        #
-        #                           Filters
-        #
-        # ========================================================================#
-
         $filters = [];
+
+        $filters['id'] = function ($query, $value) {
+            $query->where('b.id', '=', $value);
+        };
 
         $options = [
             'results_per_page' => 10,
             'order' => [
-                'r.id' => 'desc',
-            ]
+                'b.id' => 'desc',
+            ],
         ];
 
         $params = DataSource::parseRequest($request);
         $response = DataSource::get($params, $query, $columns, $filters, $formatters, $options);
 
         return Response::success($response);
-    //</editor-fold>
     }
 
-    /**
-    * Actions
-    *
-    * @access public
-    * @return json
-    */
-    public function actions(Request $request) {
-    //<editor-fold defaultstate="collapsed" desc="actions">
-
+    public function actions(Request $request)
+    {
         $actions = [
-
             'get' => [
                 'rules' => [
                     'id' => 'required|integer',
                 ],
-                'action' => function($request) {
-                //<editor-fold defaultstate="collapsed" desc="get">
+                'action' => function ($request) {
                     $item = BlogCategory::find($request->id);
 
                     if (empty($item)) {
@@ -111,62 +84,69 @@ class BlogCategoriesController extends Controller
                     }
 
                     $langs = Langs::getAll();
-                    $translations = ContentTranslations::get($langs, ContentTranslationsTypes::blog_category, $item->id);
+
+                    $translations = ContentTranslations::get(
+                        $langs,
+                        ContentTranslationsTypes::blog_category,
+                        $item->id
+                    );
 
                     return Response::success([
                         'item' => $item,
                         'translations' => $translations,
                     ]);
-                //</editor-fold>
                 },
             ],
 
             'create' => [
-                'rules' => [
-                  //Add rules  
-                ],
-                'action' => function($request) {
-                //<editor-fold defaultstate="collapsed" desc="create">
+                'rules' => [],
+                'action' => function ($request) {
                     $item = new BlogCategory;
+
                     $tmp = BlogCategory::orderBy('position', 'desc')->first();
 
                     if (empty($tmp)) {
                         $position = 0;
-                    }
-                    else {
-                        $position = $tmp->position;
-                        $position++;
+                    } else {
+                        $position = $tmp->position + 1;
                     }
 
-                    $item->position = $position;  
-
+                    $item->position = $position;
                     $item->save();
 
                     $langs = Langs::getAll();
 
-                    foreach($langs as $lang) {
-                        $content_translation = ContentTranslations::getContainer(ContentTranslationsTypes::blog_category, $item->id, $lang);
-                        $content_translation->title = $request[$lang.'_title'];
+                    foreach ($langs as $lang) {
+                        $content_translation = ContentTranslations::getContainer(
+                            ContentTranslationsTypes::blog_category,
+                            $item->id,
+                            $lang
+                        );
+
+                        $content_translation->title = $request[$lang . '_title'];
                         $content_translation->save();
                     }
-                    
-                    $translations = ContentTranslations::get($langs, ContentTranslationsTypes::blog_category, $item->id);
+
+                    $translations = ContentTranslations::get(
+                        $langs,
+                        ContentTranslationsTypes::blog_category,
+                        $item->id
+                    );
 
                     return Response::success([
                         'msg' => 'Jauns ieraksts ir pievienots!',
                         'item' => $item,
                         'translations' => $translations,
+                        'blogCategories' => BlogCategories::get('lv'),
                     ]);
-                //</editor-fold>
                 },
             ],
 
             'update' => [
                 'rules' => [
-                    'id' => 'required|integer',                    
+                    'id' => 'required|integer',
                 ],
-                'action' => function($request) {
-                //<editor-fold defaultstate="collapsed" desc="update">
+                'action' => function ($request) {
                     $item = BlogCategory::find($request->id);
 
                     if (empty($item)) {
@@ -175,20 +155,29 @@ class BlogCategoriesController extends Controller
 
                     $langs = Langs::getAll();
 
-                    foreach($langs as $lang) {
-                        $content_translation = ContentTranslations::getContainer(ContentTranslationsTypes::blog_category, $item->id, $lang);
-                        $content_translation->title = $request[$lang.'_title'];                       
+                    foreach ($langs as $lang) {
+                        $content_translation = ContentTranslations::getContainer(
+                            ContentTranslationsTypes::blog_category,
+                            $item->id,
+                            $lang
+                        );
+
+                        $content_translation->title = $request[$lang . '_title'];
                         $content_translation->save();
                     }
 
-                    $translations = ContentTranslations::get($langs, ContentTranslationsTypes::blog_category, $item->id);
+                    $translations = ContentTranslations::get(
+                        $langs,
+                        ContentTranslationsTypes::blog_category,
+                        $item->id
+                    );
 
                     return Response::success([
                         'msg' => 'Izmaiņas ir saglabātas!',
-                        'item' => $item,
+                        'item' => BlogCategory::find($item->id),
                         'translations' => $translations,
+                        'blogCategories' => BlogCategories::get('lv'),
                     ]);
-                //</editor-fold>
                 },
             ],
 
@@ -196,62 +185,57 @@ class BlogCategoriesController extends Controller
                 'rules' => [
                     'id' => 'required|integer',
                 ],
-                'action' => function($request) {
-                //<editor-fold defaultstate="collapsed" desc="delete">
+                'action' => function ($request) {
                     $item = BlogCategory::find($request->id);
 
                     if (empty($item)) {
                         return Response::error("Item with id {$request->id} doesn't exist!");
                     }
-                    
-                    if (BlogEntry::where('category_id', $item->id)->exists()) {
+
+                    if (BlogEntry::where('categories', 'like', "%[{$item->id}]%")->exists()) {
                         return Response::error("Ieraksts tiek izmantots!");
                     }
 
-                    ContentTranslations::delete(ContentTranslationsTypes::blog_category, $item->id);
+                    ContentTranslations::delete(
+                        ContentTranslationsTypes::blog_category,
+                        $item->id
+                    );
+
                     BlogCategory::where('position', '>', $item->position)->decrement('position');
-                    
+
                     $item->delete();
 
                     return Response::success([
                         'msg' => 'Item is deleted!',
-                        'blogCategories' => BlogCategory::getOptions(),
+                        'blogCategories' => BlogCategories::get('lv'),
                     ]);
-                //</editor-fold>
                 },
             ],
-                        
+
             'reorder' => [
                 'rules' => [
                     'ids' => 'required|string',
                 ],
-                'action' => function($request) {
-                //<editor-fold defaultstate="collapsed" desc="reorder">
+                'action' => function ($request) {
                     reorder($request->ids, BlogCategory::class);
 
                     return Response::success([
                         'msg' => 'Jaunās pozīcijas samainītas veiksmīgi',
+                        'blogCategories' => BlogCategories::get('lv'),
                     ]);
-                //</editor-fold>
                 },
             ],
 
             'get_options' => [
-                'rules' => [
-                ],
-                'action' => function($request) {
-                    //<editor-fold defaultstate="collapsed" desc="get_options">
+                'rules' => [],
+                'action' => function ($request) {
                     return Response::success([
                         'options' => BlogCategories::get('lv'),
                     ]);
-                //</editor-fold>
                 },
-            ], 
-
+            ],
         ];
 
         return Response::parse($request, $actions);
-    //</editor-fold>
     }
-
 }
