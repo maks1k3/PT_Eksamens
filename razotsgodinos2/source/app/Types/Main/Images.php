@@ -9,5 +9,6 @@ enum Images: string
     case single_image_optimized = 'single_image_optimized';
     
     case blog_entry_gallery_ = 'blog_entry_gallery_';
+    case blog_gallery = 'blog_gallery';
     
 }

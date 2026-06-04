@@ -275,7 +275,7 @@ class ImagePopup extends Component {
 							<div className={classNames['counter']}>
 								{items.length > 0 &&
 									showNumbers &&
-									`${current + 1} of ${items.length}`}
+									`${current + 1} no ${items.length}`}
 							</div>
 						</div>
 					</div>

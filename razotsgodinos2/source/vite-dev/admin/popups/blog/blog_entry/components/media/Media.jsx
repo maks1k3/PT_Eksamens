@@ -60,11 +60,10 @@ class Media extends Component {
 
 				<Title>Galerija</Title>
 				<ImagesAdministration
-					containerName="event_gallery"
+					containerName="blog_gallery"
 					containerId={item.id}
 				/>
 
-				<Title>Video</Title>
 				{/* <VideoAdministration id={item.video_id} /> */}
 			</Fragment>
 		);

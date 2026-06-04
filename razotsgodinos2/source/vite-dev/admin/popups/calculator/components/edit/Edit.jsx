@@ -8,21 +8,23 @@ import Field from 'ui/form/field';
 import Input from 'ui/inputs/input';
 import Select from 'ui/inputs/select';
 
-const uiProps = (ownProps) => {
-	return {
-		[ownProps.containerName]: {
-			data: {
-				item: 'item',
-			},
+const uiProps = (ownProps) => ({
+	[ownProps.containerName]: {
+		data: {
+			item: 'item',
 		},
-	};
-};
+	},
+});
 
 class Edit extends Component {
-	onSuccess = () => {
-		ee.trigger(events.datatable.refresh, {
-			id: this.props.tableName,
-		});
+	onSuccess = ({ response }) => {
+		const { tableName, containerName } = this.props;
+
+		ee.trigger(events.datatable.refresh, { id: tableName });
+
+		if (uiStore.get(`${containerName}.mounted`, false)) {
+			uiStore.set(`${containerName}.data.item`, response.item ?? null);
+		}
 	};
 
 	render() {
@@ -107,6 +109,4 @@ Edit.propTypes = {
 	item: PropTypes.object,
 };
 
-Edit = WithUi(uiProps)(Edit);
-
-export default Edit;
+export default WithUi(uiProps)(Edit);

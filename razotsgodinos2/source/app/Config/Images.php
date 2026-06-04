@@ -295,7 +295,26 @@ class Images
             'canView' => function ($container_name, $container_id, $auth_user) {        
                 return true;
             },
-        ];        
+        ]; 
+            
+            $config['event_gallery'] = [   
+            'rules' => [
+                'required',
+                'file',
+                'image',
+                'max:20000',//20mb
+            ],
+            'updatePosition' => 'end',//end|start|false,   
+            'orientate' => true,
+            'optimize' => true,//optimize image file for page speed
+            'administration' => true,  
+            'canEdit' => function ($container_name, $container_id, $auth_user) {       
+                return Users::isCMSAdmin($auth_user);
+            },
+            'canView' => function ($container_name, $container_id, $auth_user) {        
+                return true;
+            },
+        ];
         //</editor-fold>
            //s 
         return $config;

@@ -40,19 +40,19 @@ class AdministrationHeader extends Component {
 			{
 				type: 'divider',
 			},
-			{
-				title: 'Mainīt paroli',
-				icon: {
-					provider: 'icomoon',
-					name: 'key',
-				},
-				onClick: () => {
-					openPopup({
-						name: 'cms_change_password',
-						data: {},
-					});
-				},
-			},
+			// {
+			// 	title: 'Mainīt paroli',
+			// 	icon: {
+			// 		provider: 'icomoon',
+			// 		name: 'key',
+			// 	},
+			// 	onClick: () => {
+			// 		openPopup({
+			// 			name: 'cms_change_password',
+			// 			data: {},
+			// 		});
+			// 	},
+			// },
 			{
 				title: 'Izlogoties',
 				icon: {

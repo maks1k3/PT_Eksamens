@@ -30,7 +30,7 @@ class AdministrationHeader extends Component {
 		//<editor-fold defaultstate="collapsed" desc="getMenu">
 		return [
 			{
-				title: 'Administration',
+				title: 'Administrācija',
 				icon: _g.getMainUrl() + 'assets/icons/admin.svg',
 				url: _g.getMainUrl() + 'administration',
 				mode: 'navigation',
@@ -38,18 +38,18 @@ class AdministrationHeader extends Component {
 			{
 				type: 'divider',
 			},
+			// {
+			// 	title: 'Change password',
+			// 	icon: _g.getMainUrl() + 'assets/icons/key.svg',
+			// 	onClick: () => {
+			// 		openPopup({
+			// 			name: 'cms_change_password',
+			// 			data: {},
+			// 		});
+			// 	},
+			// },
 			{
-				title: 'Change password',
-				icon: _g.getMainUrl() + 'assets/icons/key.svg',
-				onClick: () => {
-					openPopup({
-						name: 'cms_change_password',
-						data: {},
-					});
-				},
-			},
-			{
-				title: 'Logout',
+				title: 'Izlogoties',
 				icon: _g.getMainUrl() + 'assets/icons/switch2.svg',
 				url: _g.getMainUrl() + 'logout',
 				mode: 'navigation',
