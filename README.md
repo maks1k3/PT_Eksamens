@@ -70,6 +70,24 @@ Uzņēmums piedāvā:
    <img width="1896" height="885" alt="Screenshot (2773)" src="https://github.com/user-attachments/assets/7e9059dc-4a84-4966-83e6-8a1058b5257f" />
    <img width="1885" height="720" alt="Screenshot (2772)" src="https://github.com/user-attachments/assets/18944a2a-f20e-4265-ad2c-d9751a041770" />
 
+8. Cenu kalkulatora sadaļā atrodas cenu kalkulators, ar kuru var aprēķināt cenu konstrukcijai.
+   No sākuma klients izvēlās kategoriju, ievada izmēru, izvēlās materiālu un citus paklpojumus.
+   <img width="1905" height="864" alt="Screenshot (2589)" src="https://github.com/user-attachments/assets/b9f649fd-96a2-4b81-9c69-bff17a74cc63" />
+   <img width="1841" height="897" alt="Screenshot (2590)" src="https://github.com/user-attachments/assets/2b2ad172-918b-4e63-925c-981433eeb0d0" />
+
+   Tālāk tiek attēlots kopsavilkums ar izvēlētām vērtībām un ar cenu. Ja klientam tas apmierina, viņam ir jāievada kontaktinformāciju un jānosūta pieprasījumu.
+   
+   <img width="677" height="784" alt="Screenshot (2592)" src="https://github.com/user-attachments/assets/17a737f2-ab6c-4bba-8c2c-48880fa33364" />
+   <img width="1347" height="843" alt="Screenshot (2593)" src="https://github.com/user-attachments/assets/cced0d1d-b8aa-40ca-82e4-034df363e29c" />
+
+   Pēc veiksmīgas nosūtīšanas tiks parādīts paziņojums.
+   <img width="1149" height="389" alt="Screenshot (2595)" src="https://github.com/user-attachments/assets/208bc4fd-5916-44a6-9998-937657bbca12" />
+
+
+
+
+
+
 
 
 
