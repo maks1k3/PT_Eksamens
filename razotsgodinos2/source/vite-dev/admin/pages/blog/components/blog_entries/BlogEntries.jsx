@@ -26,7 +26,7 @@ class BlogEntries extends Component {
 	render() {
 		return (
 			<Card>
-				<Title>Bloga ieraksti</Title>
+				<Title>Projektu ieraksti</Title>
 				<AddButton {...config} />
 				<Table {...config} />
 			</Card>

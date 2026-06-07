@@ -5,6 +5,7 @@ import Card from 'ui/common/card';
 
 import Table from './components/table/Table';
 import AddButton from './components/add_button/AddButton';
+import styles from './Categories.module.less';
 
 const config = {
 	title: 'Pievienot jaunu kategoriju',

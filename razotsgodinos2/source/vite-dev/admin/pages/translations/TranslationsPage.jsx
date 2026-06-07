@@ -24,7 +24,7 @@ class TranslationsPage extends Component {
 	render() {
 		return (
 			<Card>
-				<Title>Translations</Title>
+				<Title>Tulkojumi</Title>
 				<Table {...config} />
 			</Card>
 		);

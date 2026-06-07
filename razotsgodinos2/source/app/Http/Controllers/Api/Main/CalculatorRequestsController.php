@@ -35,6 +35,8 @@ class CalculatorRequestsController extends Controller
         $valueMap = [
             'yes'      => 'Jā',
             'no'       => 'Nē',
+             'ja'       => 'Jā',
+            'ne'       => 'Nē',
             'bloku'    => 'Bloku',
             'betoneti' => 'Betonēti',
             'skruvpali'=> 'Skrūvpāļi',

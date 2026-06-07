@@ -46,7 +46,7 @@ class BlogCategories extends Component {
 	render() {
 		return (
 			<Card>
-				<Title>Bloga Kategorijas</Title>
+				<Title>Projektu kategorijas</Title>
 				<div className={styles.wrapper}>
 					<div>
 						<AddButton {...config} />
